@@ -1,6 +1,12 @@
 # AOSP Kernel with KernelSU + SuSFS for Exynos 9611
 
-This is a temporary workaround, since Something New kernel is still under development and is really unstable, I have ported KernelSU to AOSP kernel.
+This is a temporary workaround, since Something New kernel is still under development and is really unstable, I have ported KernelSU to AOSP kernel
+
+# ⚠️ Disclaimer ⚠️
+
+This kernel is **NOT** compatible with OneUI ports or stock ROM
+This kernel only works with custom ROMs or AOSP based GSI with Android 13/14/15/16
+This kernel is **ONLY** for Exynos 9611 devices (A51, F41, M31s, M31, M21 and Tab S6 Lite LTE and Wi-Fi)
 
 ## Features
 
