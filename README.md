@@ -7,6 +7,7 @@ This is a temporary workaround, since Something New kernel is still under develo
 - KernelSU support (up until [v0.9.5](https://github.com/tiann/KernelSU/releases/download/v0.9.5/KernelSU_v0.9.5_11872-release.apk), since KernelSU has droped non-GKI support)
 - KernelSU Next support (strongly recommend using [v1.0.7](https://github.com/KernelSU-Next/KernelSU-Next/releases/download/v1.0.7/KernelSU_Next_v1.0.7_12602-release.apk) or [backslashxx magic mount port](https://github.com/backslashxx/KernelSU/releases))
 - SuSFS v1.5.5
+- Compiled with [WeebX Clang](https://github.com/XSans0/WeebX-Clang) 19.1.5 and LLVM binutils
 
 I haven't tested other KernelSU versions / variants other than that (e.g. SukiSU Ultra)
 
