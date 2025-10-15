@@ -69,7 +69,7 @@ class ClangCompiler:
         return extract_match(version_regex, stderr_output)
 
 def main():
-    parser = argparse.ArgumentParser(description="Build Something New Kernel with specified arguments")
+    parser = argparse.ArgumentParser(description="Build AOSP kernel with specified arguments")
     parser.add_argument('--target', type=str, required=True, help="Target device (a51/m21/...)", choices=['a51', 'f41', 'm31s', 'm31', 'm21', 'gta4xl', 'gta4xlwifi'])
     parser.add_argument('--ksu', action='store_true', help="Build KernelSU variant")
     parser.add_argument('--allow-dirty', action='store_true', help="Allow dirty build")
@@ -91,7 +91,7 @@ def main():
                                      capture_output=True, text=True).stdout.strip()
 
     display_info({
-        'Kernel name': 'Something New',
+        'Kernel name': 'AOSP kernel',
         'Branch': f'{current_branch}/{current_commit}',
         'Device': args.target,
         'KernelSU': args.ksu,
@@ -141,7 +141,7 @@ def main():
     copy_file(f'{output_dir}/arch/arm64/boot/dtbo-{args.target}.img', f'{anykernel3_dir}/dtbo.img')
     copy_file(f'{output_dir}/arch/arm64/boot/exynos9611.dtb', f'{anykernel3_dir}/dtb')
     ksu = 'KSU' if args.ksu else 'Non-KSU'
-    zip_filename = 'SN_{}_{}_{}.zip'.format(
+    zip_filename = 'AOSP_{}_{}_{}KSUN.zip'.format(
         args.target, datetime.today().strftime('%Y-%m-%d'), ksu)
 
     os.chdir(anykernel3_dir)
