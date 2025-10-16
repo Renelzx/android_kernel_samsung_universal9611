@@ -71,7 +71,6 @@ class ClangCompiler:
 def main():
     parser = argparse.ArgumentParser(description="Build AOSP kernel with specified arguments")
     parser.add_argument('--target', type=str, required=True, help="Target device (a51/m21/...)", choices=['a51', 'f41', 'm31s', 'm31', 'm21', 'gta4xl', 'gta4xlwifi'])
-    parser.add_argument('--ksu', action='store_true', help="Build KernelSU variant")
     parser.add_argument('--allow-dirty', action='store_true', help="Allow dirty build")
     args = parser.parse_args()
 
@@ -91,10 +90,9 @@ def main():
                                      capture_output=True, text=True).stdout.strip()
 
     display_info({
-        'Kernel name': 'AOSP kernel',
+        'Kernel name': 'AOSP kernel with KernelSU-Next and SuSFS',
         'Branch': f'{current_branch}/{current_commit}',
         'Device': args.target,
-        'KernelSU': args.ksu,
         'Compiler version': ClangCompiler.get_version(),
     })
 
@@ -111,8 +109,6 @@ def main():
                    'OBJDUMP=llvm-objdump', 'READELF=llvm-readelf', 'NM=llvm-nm',
                    'OBJCOPY=llvm-objcopy', 'ARCH=arm64', f'-j{os.cpu_count()}']
     make_defconfig = make_common + [f'exynos9611-{args.target}_defconfig']
-    if args.ksu:
-        make_defconfig.append('ksu.config')
 
     start_time = datetime.now()
     log('Running make defconfig...')
@@ -140,9 +136,8 @@ def main():
     copy_file(f'{output_dir}/arch/arm64/boot/Image', f'{anykernel3_dir}/Image')
     copy_file(f'{output_dir}/arch/arm64/boot/dtbo-{args.target}.img', f'{anykernel3_dir}/dtbo.img')
     copy_file(f'{output_dir}/arch/arm64/boot/exynos9611.dtb', f'{anykernel3_dir}/dtb')
-    ksu = 'KSU' if args.ksu else 'Non-KSU'
-    zip_filename = 'AOSP_{}_{}_{}KSUN.zip'.format(
-        args.target, datetime.today().strftime('%Y-%m-%d'), ksu)
+    zip_filename = 'AOSP_{}_{}_KSUN.zip'.format(
+        args.target, datetime.today().strftime('%Y-%m-%d'))
 
     os.chdir(anykernel3_dir)
     create_zip(zip_filename, [
