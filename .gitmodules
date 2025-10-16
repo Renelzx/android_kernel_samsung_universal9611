@@ -4,5 +4,5 @@
 
 [submodule "KernelSU"]
 	path = KernelSU-Next
-	url = https://https://github.com/KernelSU-Next/KernelSU-Next
+	url = https://github.com/KernelSU-Next/KernelSU-Next
 	branch = next
