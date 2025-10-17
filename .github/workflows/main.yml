@@ -33,6 +33,14 @@ jobs:
           tar -xzf weebx-clang.tar.gz -C toolchain --strip-components=1
           rm -rf weebx-clang.tar.gz
 
+      - name: Apply KernelSU Next SuSFS patches
+        run: |
+          cd Patches
+          cp * ../KernelSU-Next/
+          cd ..
+          cd KernelSU-Next/
+          patch -p1 < 001-ksun-susfs.patch
+
       - name: Build kernel
         run: |
           python3 build_kernel.py --target=${{ matrix.target }}
