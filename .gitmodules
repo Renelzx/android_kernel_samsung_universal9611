@@ -1,6 +1,6 @@
 [submodule "AnyKernel3"]
 	path = AnyKernel3
-	url = https://github.com/Exynos9611Development/kernel_AnyKernel3
+	url = https://github.com/ashstone-dev/kernel_AnyKernel3
 
 [submodule "KernelSU"]
 	path = KernelSU-Next
