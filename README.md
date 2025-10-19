@@ -4,6 +4,7 @@
 
 - KernelSU Next support
 - Backported SuSFS v1.5.9
+- WireGuard in-kernel VPN drivers
 - Compiled with [WeebX Clang](https://github.com/XSans0/WeebX-Clang) 19.1.5 and LLVM binutils
 
 # ⚠️ Disclaimer ⚠️
