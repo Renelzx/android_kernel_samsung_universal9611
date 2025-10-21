@@ -1,4 +1,4 @@
-# AOSP Kernel with KernelSU + SuSFS for Exynos 9611
+# AOSP Kernel with KernelSU Next + SuSFS for Exynos 9611
 
 ## Features
 
