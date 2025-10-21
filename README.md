@@ -3,7 +3,7 @@
 ## Features
 
 - KernelSU Next support
-- Backported SuSFS v1.5.9
+- Backported SuSFS v1.5.12
 - WireGuard in-kernel VPN drivers
 - Compiled with [WeebX Clang](https://github.com/XSans0/WeebX-Clang) 19.1.5 and LLVM binutils
 
@@ -28,3 +28,4 @@ Flash the kernel using custom recovery or via adb sideload
 - [backslashxx](https://github.com/backslashxx)
 - [simonpunk](https://github.com/simonpunk)
 - [fatalcoder524](https://github.com/fatalcoder524)
+- [TheSillyOk](https://github.com/TheSillyOk)
