@@ -89,7 +89,7 @@ arch/*/include/generated
 patches-*
 
 # quilt's files
-!001-ksun-susfs.patch
+!Patches/*
 patches
 series
 
