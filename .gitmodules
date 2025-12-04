@@ -1,0 +1,9 @@
+[submodule "AnyKernel3"]
+	path = AnyKernel3
+	url = https://github.com/ashstone-dev/kernel_AnyKernel3
+	branch = everline
+
+[submodule "KernelSU-Next"]
+	path = KernelSU-Next
+	url = https://github.com/KernelSU-Next/KernelSU-Next
+	branch = next
