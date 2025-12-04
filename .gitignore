@@ -135,3 +135,6 @@ out/
 toolchain
 toolchain/
 Everline_*.zip
+
+# Patches
+!Patches/*
