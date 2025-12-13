@@ -54,7 +54,7 @@ $(obj)/Image.gz-dtb: $(obj)/Image.gz $(DTB_OBJS) FORCE
 
 install:
 	$(CONFIG_SHELL) $(srctree)/$(src)/install.sh $(KERNELRELEASE) \
-	$(obj)/Image System.map "$(INSTALL_PATH)"
+	$(obj)/Image.lz4 System.map "$(INSTALL_PATH)"
 
 zinstall:
 	$(CONFIG_SHELL) $(srctree)/$(src)/install.sh $(KERNELRELEASE) \
