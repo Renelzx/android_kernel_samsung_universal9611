@@ -39,7 +39,7 @@ jobs:
           cp * ../KernelSU-Next/
           cd ..
           cd KernelSU-Next/
-          patch -p1 < susfs-1.5.12.patch
+          patch -p1 < ksu-susfs-1.5.12.patch
 
       - name: Build kernel
         run: |
