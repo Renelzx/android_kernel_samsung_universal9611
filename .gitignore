@@ -79,6 +79,11 @@ modules.builtin
 !.github
 
 #
+# Kernel patch folders
+#
+!Patches/*
+
+#
 # Generated include files
 #
 include/config
