@@ -2474,6 +2474,10 @@ static void get_scan_count(struct lruvec *lruvec, struct mem_cgroup *memcg,
 	unsigned long ap, fp;
 	enum lru_list lru;
 
+	if (!current_is_kswapd() && sc->priority < 10) {
+		sc->priority = 10;
+	}
+
 	if (is_kanond(sc)) {
 		scan_balance = SCAN_ANON;
 		goto out;
