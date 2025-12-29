@@ -55,7 +55,8 @@ static int ion_cma_allocate(struct ion_heap *heap, struct ion_buffer *buffer,
 	bool protected = cma_heap->secure && (flags & ION_FLAG_PROTECTED);
 	int ret = -ENOMEM;
 
-	pages = cma_alloc(cma_heap->cma, nr_pages, align, GFP_KERNEL);
+	pages = cma_alloc(cma_heap->cma, nr_pages, align,
+			GFP_KERNEL | __GFP_NORETRY | __GFP_NOWARN);
 	if (!pages) {
 		perrfn("failed to allocate from %s(id %d), size %lu",
 		       cma_heap->heap.name, cma_heap->heap.id, len);
