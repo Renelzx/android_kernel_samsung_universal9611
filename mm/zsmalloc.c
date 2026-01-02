@@ -2510,7 +2510,7 @@ void try_schedule_zs_compact(void)
 			!work_pending(&zs_compact_work) &&
 			zs_compactable(g_pool, ZS_COMPACT_THRESHOLD)) {
 		resume = jiffies + ZS_COMPACT_INTERVAL * HZ;
-		schedule_work(&zs_compact_work);
+		queue_work(system_unbound_wq, &zs_compact_work);
 	}
 }
 
