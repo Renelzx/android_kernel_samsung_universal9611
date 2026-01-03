@@ -1870,7 +1870,7 @@ shrink_inactive_list(unsigned long nr_to_scan, struct lruvec *lruvec,
 			return 0;
 
 		/* wait a bit for the reclaimer. */
-		msleep(100);
+		msleep(10);
 		stalled = true;
 
 		/* We are about to die and free our memory. Return now. */
@@ -3507,7 +3507,7 @@ static bool pgdat_balanced(pg_data_t *pgdat, int order, int classzone_idx)
 		if (!managed_zone(zone))
 			continue;
 
-		mark = high_wmark_pages(zone);
+		mark = high_wmark_pages(zone) + (high_wmark_pages(zone) >> 1);
 		if (zone_watermark_ok_safe(zone, order, mark, classzone_idx))
 			return true;
 	}
