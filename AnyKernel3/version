@@ -16,16 +16,10 @@
 *****************************************************
                       INFORMATION
 *****************************************************
- Version   : 1.0.0
- Chipset   : Exynos 9611 with Mali G72 MP3
- Android   : Compatible with AOSP 13/14/15/16
- Developer : Ashley Hwang | Telegram: @ashleyhwang92
- Support   : Join us on Telegram @Exynos9611Development_chat
-*****************************************************
-*****************************************************
-                   MAIN FEATURES
-*****************************************************
- KernelSU Next support
- SuSFS support
- WireGuard in-kernel VPN drivers
+ Version    : 1.1.0
+ Chipset    : Exynos 9611 with Mali G72 MP3
+ Android    : Compatible with AOSP 13/14/15/16
+ Developers : Ashley Hwang | Telegram: @ashleyhwang92
+              Parbindar Singh | Telegram: @PARBINDAR7
+ Support    : Join us on Telegram: @ExyROMs
 *****************************************************
