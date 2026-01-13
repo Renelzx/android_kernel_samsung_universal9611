@@ -1,0 +1,34 @@
+name: Release
+on: workflow_dispatch
+
+permissions:
+  contents: write
+  discussions: write
+
+jobs:
+  build:
+    name: Kernel
+    uses: ./.github/workflows/main.yml
+
+  releaser:
+    needs: [build]
+    runs-on: ubuntu-24.04
+    permissions: write-all
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@main
+        with:
+          merge-multiple: true
+          path: /home/runner
+
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y%m%d')" >> $GITHUB_OUTPUT
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "${{ steps.date.outputs.date }}"
+          tag_name: "${{ steps.date.outputs.date }}"
+          prerelease: false
+          files: /home/runner/Everline_*.zip
